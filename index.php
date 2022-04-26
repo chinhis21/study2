@@ -1,4 +1,14 @@
 <?php
+/*
+ * 1. “Create simple application Using composer autoloader.
+2. Include and use one of the third party pakage using composer."
+3. “Create couple of specific exceptions
+4. Integrate exception processing to previously added” third party library
+
+5. Use factory for creation non injectable objects.
+
+Read about other patterns, try to make simple examples"
+ */
 
 require_once __DIR__ . '/myApp/myAutoload.php'; //my Classes autoload
 require_once __DIR__ . '/vendor/autoload.php';
@@ -6,7 +16,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 use myApp\Auth\Auth;
 use Laminas\Session\SessionManager;
 
-$createLoginSession = new Auth('admin','0000','192.168.1.11');
+$createLoginSession = new Auth1('admin','0000','192.168.1.11');
 $loginStatus = $createLoginSession -> createAuth();
 
 if($loginStatus===true){ //show message if user logined
@@ -29,3 +39,7 @@ if(Auth::logOut('admin1')===true){
 else {
     echo 'logout FAIL. Check login'."\r\n";
 }
+
+//$c = new SessionManager();
+
+//print_r($_SESSION);
