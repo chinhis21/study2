@@ -1,9 +1,9 @@
 <?php
 namespace myApp\userManager;
-use myApp\userManager\acts;
+use myApp\userManager\userInterfaces;
 
 
-class workWithDB implements acts
+class workWithDB implements userInterfaces
 {
     public static function readData($login){
         return false;

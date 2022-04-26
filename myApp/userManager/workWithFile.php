@@ -5,13 +5,15 @@
  * !!! Login must be uniqe
  */
 namespace myApp\userManager;
-use myApp\userManager\acts;
+use myApp\userManager\userInterfaces;
 
 
-class workWithFile implements acts
+class workWithFile implements userInterfaces
 {
     public static function readData($login){
-        $fp = fopen(__DIR__ .PASSWDPATH.FILENAME, "r");
+
+        $fp = fopen(PASSWDPATH.FILENAME, "r");
+
         while (!feof($fp)){
             $mytext = fgets($fp, 4096);
             $userData=explode(':|:', $mytext);

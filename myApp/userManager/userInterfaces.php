@@ -5,9 +5,9 @@
 namespace myApp\userManager;
 
 
-interface acts
+interface userInterfaces
 {
-    public function readData();
-    public function insertData();
-    public function updateData();
+    public static function readData($login);
+    public static function insertData(array $data);
+    public static function updateData(array $data);
 }

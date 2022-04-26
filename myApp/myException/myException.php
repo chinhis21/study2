@@ -3,8 +3,8 @@ namespace myApp\myException;
 
 class myException extends \Exception
 {
-    function classNotFound(){
-        echo "classNotFound\r\n";
+    function classNotFound($filename){
+        echo "classNotFound $filename\r\n";
         exit;
     }
     function invalidDataType($type){

@@ -13,7 +13,7 @@ function myApp ($className) {
             include_once $fileName;
         }
     }catch (myException $e) {
-        $e->classNotFound();
+        $e->classNotFound($fileName);
     }
     
 }
