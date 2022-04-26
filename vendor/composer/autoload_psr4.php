@@ -6,7 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Laminas\\Stdlib\\' => array($vendorDir . '/laminas/laminas-stdlib/src'),
-    'Laminas\\Session\\' => array($vendorDir . '/laminas/laminas-session/src'),
-    'Laminas\\EventManager\\' => array($vendorDir . '/laminas/laminas-eventmanager/src'),
+    'Aura\\Session\\_Config\\' => array($vendorDir . '/aura/session/config'),
+    'Aura\\Session\\' => array($vendorDir . '/aura/session/src'),
 );

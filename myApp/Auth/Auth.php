@@ -8,6 +8,7 @@
  * [ip]=> ip
  */
 namespace myApp\Auth;
+use Aura\Session\SessionFactory;
 
 interface authFunctions 
 {
@@ -17,15 +18,24 @@ interface authFunctions
 
 abstract class BaseAuthMethods
 {
-    const salt=159753;
+    protected $salt;
     protected $login;
     protected $password;
     protected $ip;
     
-    function __construct($login,$password,$ip){
+    function __construct($login,$password,$ip,$salt){
+        
+        $this->salt=$salt;
         $this->login=$login;
         $this->password=$password;
         $this->ip=$ip;
+        
+        //use packager from composer
+        $sessionInit = new SessionFactory();
+        $session = $sessionInit->newInstance(array());
+        $session->start();
+        //
+
     }
         
     public static function checkAuth($login,$password,$ip,$salt){
@@ -44,9 +54,9 @@ class Auth extends BaseAuthMethods implements authFunctions
     public function createAuth(){
         session_start();
         $_SESSION['login']=$this->login;
-        $_SESSION['password']=md5($this->password.self::salt);
+        $_SESSION['password']=md5($this->password.$this->salt);
         $_SESSION['ip']=$this->ip;
-        if(self::checkAuth($this->login,$this->password,$this->ip,self::salt)){
+        if(self::checkAuth($this->login,$this->password,$this->ip,$this->salt)){
             return true;
         }
         else {

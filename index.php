@@ -14,11 +14,11 @@ require_once __DIR__ . '/myApp/myAutoload.php'; //my Classes autoload
 require_once __DIR__ . '/vendor/autoload.php';
 
 use myApp\Auth\Auth;
-use Laminas\Session\SessionManager;
+use myApp\userManager\acts
 
-$createLoginSession = new Auth1('admin','0000','192.168.1.11');
+$createLoginSession = new Auth('admin','0000','192.168.1.11','159753');
 $loginStatus = $createLoginSession -> createAuth();
-
+/*
 if($loginStatus===true){ //show message if user logined
     echo 'logined'."\r\n";
 }
@@ -39,7 +39,12 @@ if(Auth::logOut('admin1')===true){
 else {
     echo 'logout FAIL. Check login'."\r\n";
 }
+*/
 
-//$c = new SessionManager();
 
-//print_r($_SESSION);
+//$segment = $session->getSegment('Auth');
+//$segment->set('foo', 'bar');
+//$segment->set('baz', 'dib');
+//$session->clear();
+//$session->commit();
+print_r($_SESSION);

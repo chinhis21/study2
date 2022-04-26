@@ -7,26 +7,21 @@ namespace Composer\Autoload;
 class ComposerStaticInitdac4791b211fc75a47c3816b9a1104aa
 {
     public static $prefixLengthsPsr4 = array (
-        'L' => 
+        'A' => 
         array (
-            'Laminas\\Stdlib\\' => 15,
-            'Laminas\\Session\\' => 16,
-            'Laminas\\EventManager\\' => 21,
+            'Aura\\Session\\_Config\\' => 21,
+            'Aura\\Session\\' => 13,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Laminas\\Stdlib\\' => 
+        'Aura\\Session\\_Config\\' => 
         array (
-            0 => __DIR__ . '/..' . '/laminas/laminas-stdlib/src',
+            0 => __DIR__ . '/..' . '/aura/session/config',
         ),
-        'Laminas\\Session\\' => 
+        'Aura\\Session\\' => 
         array (
-            0 => __DIR__ . '/..' . '/laminas/laminas-session/src',
-        ),
-        'Laminas\\EventManager\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/laminas/laminas-eventmanager/src',
+            0 => __DIR__ . '/..' . '/aura/session/src',
         ),
     );
 
